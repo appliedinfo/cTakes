@@ -1,0 +1,14 @@
+// Commands and parameters to create a default plaintext document processing pipeline with UMLS lookup
+
+// Load a simple token processing pipeline from another pipeline file
+load org/apache/ctakes/core/pipeline/DefaultTokenizerPipeline.piper
+
+// Add non-core annotators
+add ContextDependentTokenizerAnnotator
+addDescription POSTagger
+
+// Default fast dictionary lookup
+add DefaultJCasTermAnnotator
+
+// Add Cleartk Entity Attribute annotators
+load org/apache/ctakes/assertion/pipeline/AttributeCleartkSubPipe.piper
