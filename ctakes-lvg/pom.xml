@@ -57,8 +57,8 @@
 		</dependency>
 		<dependency>
 			<groupId>gov.nih.nlm.nls.lvg</groupId>
-			<artifactId>lvg2010dist</artifactId>
-			<version>0.0.1</version>
+			<artifactId>lvgdist</artifactId>
+			<version>2016.0</version>
 		</dependency>
 	</dependencies>
 </project>

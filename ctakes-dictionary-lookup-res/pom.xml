@@ -32,7 +32,7 @@
 
   <dependencies>
 		<!-- cTAKES Resources -->
-		<dependency>
+		<!--dependency>
 			<groupId>net.sourceforge.ctakesresources</groupId>
 			<artifactId>ctakes-resources-umls2011ab</artifactId>
 			<version>3.1.3</version>
@@ -46,7 +46,7 @@
 			<groupId>net.sourceforge.ctakesresources</groupId>
 			<artifactId>ctakes-resources-orangebook-hsqldb</artifactId>
 			<version>3.1.3</version>
-		</dependency>		
+		</dependency-->		
 		
 	</dependencies>
 	<build>
@@ -62,9 +62,9 @@
 							<goal>unpack-dependencies</goal>
 						</goals>
 						<configuration>
-							<includeArtifactId>ctakes-resources-umls2011ab</includeArtifactId>
+							<!--includeArtifactId>ctakes-resources-umls2011ab</includeArtifactId>
 							<includeArtifactId>ctakes-resources-rxnorm-hsqldb-2011ab</includeArtifactId>
-							<includeArtifactId>ctakes-resources-orangebook-hsqldb</includeArtifactId>
+							<includeArtifactId>ctakes-resources-orangebook-hsqldb</includeArtifactId-->
 							<outputDirectory>${project.build.directory}/classes</outputDirectory>
 						</configuration>
 					</execution>

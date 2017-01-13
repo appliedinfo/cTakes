@@ -66,7 +66,7 @@ public class GramMatrixExporterImpl extends WekaBagOfWordsExporterImpl implement
 		return kernelEvaluationDao;
 	}
 
-	public BagOfWordsExporter getBagOfWordsExporter() {
+	public WekaBagOfWordsExporter getBagOfWordsExporter() {
 		return bagOfWordsExporter;
 	}
 

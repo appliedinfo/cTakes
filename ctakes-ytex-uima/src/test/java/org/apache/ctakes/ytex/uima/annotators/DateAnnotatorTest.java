@@ -18,6 +18,8 @@
  */
 package org.apache.ctakes.ytex.uima.annotators;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.ctakes.typesystem.type.textsem.DateAnnotation;
 import org.apache.uima.UIMAException;
 import org.apache.uima.cas.text.AnnotationIndex;
@@ -33,6 +35,7 @@ import org.apache.uima.fit.factory.JCasFactory;
  *
  */
 public class DateAnnotatorTest {
+	private static final Log LOGGER = LogFactory.getLog(DateAnnotatorTest.class);
 
 	/**
 	 * Verify that date parsing with a manually created date works
@@ -41,7 +44,8 @@ public class DateAnnotatorTest {
 	@Test
 	public void testParseDate() throws UIMAException {
 	    JCas jCas = JCasFactory.createJCasFromPath("src/main/resources/org/apache/ctakes/ytex/types/TypeSystem.xml");
-	    String date = (new java.util.Date()).toString();
+	    String date = "Jan 10 2017";
+		LOGGER.info("Attempt to parse date: '" + date + "'");
 	    jCas.setDocumentText(date);
 	    DateAnnotation ctakesDate = new DateAnnotation(jCas);
 	    ctakesDate.setBegin(0);
@@ -51,9 +55,9 @@ public class DateAnnotatorTest {
 	    dateAnnotator.dateType = org.apache.ctakes.ytex.uima.types.Date.class.getName();
 	    dateAnnotator.process(jCas);
 	    AnnotationIndex<Annotation> ytexDates = jCas.getAnnotationIndex(org.apache.ctakes.ytex.uima.types.Date.type);
-	    Assert.assertTrue(ytexDates.iterator().hasNext());
+	    Assert.assertTrue("Date '" + date + "' should be parsed, but annotator return nothing", ytexDates.iterator().hasNext());
 	    String dateParsed = ((org.apache.ctakes.ytex.uima.types.Date)ytexDates.iterator().next()).getDate();
-	    Assert.assertNotNull(dateParsed);
+	    Assert.assertNotNull("Parsed date '" + date + "' should not be null", dateParsed);
 	    System.out.println(dateParsed);
 	}
 

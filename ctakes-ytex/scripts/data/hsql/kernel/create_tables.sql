@@ -58,10 +58,10 @@ CREATE CACHED TABLE classifier_eval (
 
 CREATE CACHED TABLE classifier_eval_svm (
 	classifier_eval_id int not null ,
-	cost double DEFAULT '0',
+	cost double DEFAULT 0,
   	weight varchar(50),
-	degree int DEFAULT '0',
-	gamma double DEFAULT '0',
+	degree int DEFAULT 0,
+	gamma double DEFAULT 0,
 	kernel int NULL,
 	supportVectors int null,
 	vcdim double null
